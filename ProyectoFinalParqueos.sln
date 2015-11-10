@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinalParqueos", "ProyectoFinalParqueos\ProyectoFinalParqueos.csproj", "{622EE66F-130F-4081-AED6-EB5C196E89A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{63D9B3B1-E46A-4991-9794-4BFC9194670D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{075696D4-C033-4AC9-9834-F0CBBA9F02A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{622EE66F-130F-4081-AED6-EB5C196E89A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622EE66F-130F-4081-AED6-EB5C196E89A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622EE66F-130F-4081-AED6-EB5C196E89A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622EE66F-130F-4081-AED6-EB5C196E89A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D9B3B1-E46A-4991-9794-4BFC9194670D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D9B3B1-E46A-4991-9794-4BFC9194670D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D9B3B1-E46A-4991-9794-4BFC9194670D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D9B3B1-E46A-4991-9794-4BFC9194670D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{075696D4-C033-4AC9-9834-F0CBBA9F02A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075696D4-C033-4AC9-9834-F0CBBA9F02A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075696D4-C033-4AC9-9834-F0CBBA9F02A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075696D4-C033-4AC9-9834-F0CBBA9F02A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
