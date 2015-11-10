@@ -66,7 +66,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(291, 203);
+            this.Eliminarbutton.Location = new System.Drawing.Point(291, 197);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 2;
