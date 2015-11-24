@@ -32,8 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,11 +51,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes.Designer.cs">
+      <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaCobros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaCobros.Designer.cs">
+      <DependentUpon>ConsultaCobros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaContratos.Designer.cs">
+      <DependentUpon>ConsultaContratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaMarcas.Designer.cs">
+      <DependentUpon>ConsultaMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaModelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaModelos.Designer.cs">
+      <DependentUpon>ConsultaModelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaParqueos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaParqueos.Designer.cs">
+      <DependentUpon>ConsultaParqueos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaVehiculos.Designer.cs">
+      <DependentUpon>ConsultaVehiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="IniciarSesion.cs">
       <SubType>Form</SubType>
@@ -64,14 +113,131 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroClientes.Designer.cs">
+      <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCobros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroCobros.Designer.cs">
+      <DependentUpon>RegistroCobros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroContratos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroContratos.Designer.cs">
+      <DependentUpon>RegistroContratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroMarcas.Designer.cs">
+      <DependentUpon>RegistroMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroModelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroModelos.Designer.cs">
+      <DependentUpon>RegistroModelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroParqueos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroParqueos.Designer.cs">
+      <DependentUpon>RegistroParqueos.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistroUsuarios.Designer.cs">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroVehiculos.Designer.cs">
+      <DependentUpon>RegistroVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteClientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteCobros.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteCobros.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteContratos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteContratos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteMarcas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteMarcas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteModelos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteModelos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteParqueos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteParqueos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteUsuario.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteUsuario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportVehiculos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportVehiculos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VisorReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorReportes.Designer.cs">
+      <DependentUpon>VisorReportes.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ConsultaClientes.resx">
+      <DependentUpon>ConsultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaCobros.resx">
+      <DependentUpon>ConsultaCobros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaContratos.resx">
+      <DependentUpon>ConsultaContratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaMarcas.resx">
+      <DependentUpon>ConsultaMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaModelos.resx">
+      <DependentUpon>ConsultaModelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaParqueos.resx">
+      <DependentUpon>ConsultaParqueos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaUsuarios.resx">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaVehiculos.resx">
+      <DependentUpon>ConsultaVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
@@ -89,8 +255,64 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistroClientes.resx">
+      <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroCobros.resx">
+      <DependentUpon>RegistroCobros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroContratos.resx">
+      <DependentUpon>RegistroContratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroMarcas.resx">
+      <DependentUpon>RegistroMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroModelos.resx">
+      <DependentUpon>RegistroModelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroParqueos.resx">
+      <DependentUpon>RegistroParqueos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroUsuarios.resx">
       <DependentUpon>RegistroUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroVehiculos.resx">
+      <DependentUpon>RegistroVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteClientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteCobros.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCobros.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteContratos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteContratos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteMarcas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteMarcas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteModelos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteModelos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteParqueos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteParqueos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteUsuario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteUsuario.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportVehiculos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportVehiculos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisorReportes.resx">
+      <DependentUpon>VisorReportes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,6 +332,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Parqueo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

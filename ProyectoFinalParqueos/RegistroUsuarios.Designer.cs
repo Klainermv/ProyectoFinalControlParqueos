@@ -41,12 +41,13 @@
             this.ContraseniatextBox = new System.Windows.Forms.TextBox();
             this.ConfrimarContraseniatextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Modificarbutton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(20, 203);
+            this.Nuevobutton.Location = new System.Drawing.Point(23, 203);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 0;
@@ -56,7 +57,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(113, 203);
+            this.Guardarbutton.Location = new System.Drawing.Point(125, 203);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(291, 197);
+            this.Eliminarbutton.Location = new System.Drawing.Point(220, 203);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 2;
@@ -77,7 +78,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 30);
+            this.label1.Location = new System.Drawing.Point(6, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 3;
@@ -86,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 58);
+            this.label2.Location = new System.Drawing.Point(6, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 4;
@@ -95,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 86);
+            this.label3.Location = new System.Drawing.Point(6, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 5;
@@ -104,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 114);
+            this.label4.Location = new System.Drawing.Point(6, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 6;
@@ -113,7 +114,7 @@
             // ActivocheckBox
             // 
             this.ActivocheckBox.AutoSize = true;
-            this.ActivocheckBox.Location = new System.Drawing.Point(154, 145);
+            this.ActivocheckBox.Location = new System.Drawing.Point(129, 163);
             this.ActivocheckBox.Name = "ActivocheckBox";
             this.ActivocheckBox.Size = new System.Drawing.Size(56, 17);
             this.ActivocheckBox.TabIndex = 8;
@@ -122,35 +123,39 @@
             // 
             // UsuarioIdtextBox
             // 
-            this.UsuarioIdtextBox.Location = new System.Drawing.Point(154, 22);
+            this.UsuarioIdtextBox.Location = new System.Drawing.Point(129, 16);
             this.UsuarioIdtextBox.Name = "UsuarioIdtextBox";
             this.UsuarioIdtextBox.Size = new System.Drawing.Size(100, 20);
             this.UsuarioIdtextBox.TabIndex = 9;
             // 
             // NombreUsuariotextBox
             // 
-            this.NombreUsuariotextBox.Location = new System.Drawing.Point(154, 50);
+            this.NombreUsuariotextBox.Location = new System.Drawing.Point(129, 44);
             this.NombreUsuariotextBox.Name = "NombreUsuariotextBox";
             this.NombreUsuariotextBox.Size = new System.Drawing.Size(198, 20);
             this.NombreUsuariotextBox.TabIndex = 10;
             // 
             // ContraseniatextBox
             // 
-            this.ContraseniatextBox.Location = new System.Drawing.Point(154, 78);
+            this.ContraseniatextBox.Location = new System.Drawing.Point(129, 72);
             this.ContraseniatextBox.Name = "ContraseniatextBox";
+            this.ContraseniatextBox.PasswordChar = '*';
             this.ContraseniatextBox.Size = new System.Drawing.Size(198, 20);
             this.ContraseniatextBox.TabIndex = 11;
+            this.ContraseniatextBox.UseSystemPasswordChar = true;
             // 
             // ConfrimarContraseniatextBox
             // 
-            this.ConfrimarContraseniatextBox.Location = new System.Drawing.Point(154, 106);
+            this.ConfrimarContraseniatextBox.Location = new System.Drawing.Point(129, 100);
             this.ConfrimarContraseniatextBox.Name = "ConfrimarContraseniatextBox";
+            this.ConfrimarContraseniatextBox.PasswordChar = '*';
             this.ConfrimarContraseniatextBox.Size = new System.Drawing.Size(198, 20);
             this.ConfrimarContraseniatextBox.TabIndex = 12;
+            this.ConfrimarContraseniatextBox.UseSystemPasswordChar = true;
             // 
             // Buscarbutton
             // 
-            this.Buscarbutton.Location = new System.Drawing.Point(277, 19);
+            this.Buscarbutton.Location = new System.Drawing.Point(252, 13);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
             this.Buscarbutton.TabIndex = 13;
@@ -158,22 +163,33 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // Modificarbutton
+            // label5
             // 
-            this.Modificarbutton.Location = new System.Drawing.Point(210, 203);
-            this.Modificarbutton.Name = "Modificarbutton";
-            this.Modificarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Modificarbutton.TabIndex = 14;
-            this.Modificarbutton.Text = "Modificar";
-            this.Modificarbutton.UseVisualStyleBackColor = true;
-            this.Modificarbutton.Click += new System.EventHandler(this.Modificarbutton_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 134);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Area:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Administrador",
+            "Empleado"});
+            this.comboBox1.Location = new System.Drawing.Point(129, 126);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 15;
             // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 254);
-            this.Controls.Add(this.Modificarbutton);
+            this.ClientSize = new System.Drawing.Size(343, 254);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.ConfrimarContraseniatextBox);
             this.Controls.Add(this.ContraseniatextBox);
@@ -210,6 +226,7 @@
         private System.Windows.Forms.TextBox ContraseniatextBox;
         private System.Windows.Forms.TextBox ConfrimarContraseniatextBox;
         private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.Button Modificarbutton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

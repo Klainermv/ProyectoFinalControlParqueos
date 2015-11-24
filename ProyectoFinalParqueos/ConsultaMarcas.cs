@@ -7,31 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BLL;
-
 namespace ProyectoFinalParqueos
 {
-    public partial class ConsultaUsuarios : Form
+    public partial class ConsultaMarcas : Form
     {
-        private Usuarios usuario = new Usuarios(); 
-        public ConsultaUsuarios()
+        private Marcas marca = new Marcas();
+        public ConsultaMarcas()
         {
             InitializeComponent();
-            UsuariosdataGridView.DataSource = usuario.Listar("*","1=1"," asc "); //este lo uso para llamar todo cuando corre la ventana
+            MarcasdataGridView.DataSource = marca.Listar("*","1=1","asc");
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             string filtroWhere = "";
-            
+
             if (BuscarcomboBox.SelectedIndex == 0)
             {
-                filtroWhere = "UsuarioId="+BuscartextBox.Text;
+                filtroWhere = "MarcaId=" + BuscartextBox.Text;
             }
             if (BuscarcomboBox.SelectedIndex == 1)
             {
-                filtroWhere = "NombreUsuario like '%" + BuscartextBox.Text+"%'"; // para buscar tod de un mismo nommbre
+                filtroWhere = "Descripcion like '%" + BuscartextBox.Text + "%'";
             }
-            UsuariosdataGridView.DataSource = usuario.Listar("*", filtroWhere," asc ");
+
+            MarcasdataGridView.DataSource = marca.Listar("*", filtroWhere, " asc ");
         }
     }
 }

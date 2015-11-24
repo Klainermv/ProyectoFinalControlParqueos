@@ -7,12 +7,12 @@ using System.Data;
 
 namespace BLL
 {
-    public class Usuarios
+    public class Usuarios:ClaseMaestra
     {
         public int UsuarioId { set; get; }
         public string NombreUsuario { set; get; }
         public string Contrasenia { set; get; }
-        public int Activo { set; get; }
+        public bool Activo { set; get; }
         
 
         private Conexion conexion = new Conexion();
@@ -22,67 +22,56 @@ namespace BLL
             UsuarioId = 0;
             NombreUsuario = "";
             Contrasenia = "";
-            Activo = 0;
+            Activo = false;
            
         }
 
-        public bool Insertar()
+        public override bool Insertar()
         {
             return conexion.Ejecutar("Insert into Usuarios(NombreUsuario,Contrasenia,Activo)values('"+NombreUsuario+"','"+Contrasenia+"','"+Activo+"')");
         }
 
-        public bool Modificar(int UsuarioId)
+        public override bool Modificar(int UsuarioId)
         {
             return conexion.Ejecutar("Update Usuarios set NombreUsuario='"+NombreUsuario+"', Contrasenia='"+Contrasenia+"',Activo='"+Activo+"' where UsuarioId="+UsuarioId);
         }
 
-        public bool Eliminar()
+        public override bool Eliminar()
         {
             return conexion.Ejecutar("Delete from Usuarios where UsuarioId="+UsuarioId);
         }
 
-        public bool Buscar(int UsuarioId)
+        public override bool Buscar(int IdBuscado)
         {
             bool retorno = false;
             DataTable dt = new DataTable();
-            dt = conexion.ObtenerDatos("select * from Usuarios where UsuarioId = " + UsuarioId);
+            dt = conexion.ObtenerDatos("select * from Usuarios where UsuarioId = " + IdBuscado);
             if (dt.Rows.Count > 0)
             {
                 UsuarioId = (int)dt.Rows[0]["UsuarioId"];
                 NombreUsuario = dt.Rows[0]["NombreUsuario"].ToString();
                 Contrasenia = dt.Rows[0]["Contrasenia"].ToString();
-                Activo = (int)dt.Rows[0]["Activo"];
+                Activo = (bool)dt.Rows[0]["Activo"];
 
                 retorno = true;
-            }
-            else
-            {
-                retorno = false;
             } 
+
             return retorno;
         }
 
-        public DataTable Listar(string Campos, string filtrowhere)
+        public override DataTable Listar(string Campos, string Condicion, string Orden)
         {
-            return conexion.ObtenerDatos("select " + Campos + " from Usuarios where " + filtrowhere);
+            return conexion.ObtenerDatos("select " + Campos + " from Usuarios where " + Condicion +" order by UsuarioId "+Orden);
 
         }
 
         public bool IniciarSesion(string NombreUsuario, string Contrasenia)
         {
-            bool retorno = false;
+            
             DataTable dt = new DataTable();
             dt = conexion.ObtenerDatos("select * from Usuarios where  NombreUsuario='" + NombreUsuario + "' and Contrasenia='" + Contrasenia + "'");
-            if (dt.Rows.Count > 0)
-            {
-  
-                retorno = true;
-            }
-            else
-            {
-                retorno = false;
-            }
-            return retorno;
+         
+            return dt.Rows.Count > 0 ;
         }
     }
 }

@@ -47,8 +47,10 @@
             // 
             this.ContraseniatextBox.Location = new System.Drawing.Point(138, 75);
             this.ContraseniatextBox.Name = "ContraseniatextBox";
+            this.ContraseniatextBox.PasswordChar = '*';
             this.ContraseniatextBox.Size = new System.Drawing.Size(171, 20);
             this.ContraseniatextBox.TabIndex = 1;
+            this.ContraseniatextBox.UseSystemPasswordChar = true;
             // 
             // Iniciarbutton
             // 
@@ -88,7 +90,7 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Contraseña:";
             // 
-            // IniciarSeccion
+            // IniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,9 +101,9 @@
             this.Controls.Add(this.Iniciarbutton);
             this.Controls.Add(this.ContraseniatextBox);
             this.Controls.Add(this.NombreUsuariotextBox);
-            this.Name = "IniciarSeccion";
+            this.Name = "IniciarSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Iniciar Seccion";
+            this.Text = "Iniciar Sesion";
             this.ResumeLayout(false);
             this.PerformLayout();
 
