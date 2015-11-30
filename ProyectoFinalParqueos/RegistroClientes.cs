@@ -8,39 +8,45 @@ using System.Text;
 using System.Windows.Forms;
 using BLL;
 
+
 namespace ProyectoFinalParqueos
 {
-    public partial class RegistroMarcas : Form
+    public partial class RegistroClientes : Form
     {
-        private Marcas marca = new Marcas();
-        public RegistroMarcas()
+        private Clientes clientes = new Clientes();
+        public RegistroClientes()
         {
             InitializeComponent();
         }
 
         private void Limpiar()
         {
-            MarcaIdtextBox.Clear();
-            DescripciontextBox.Clear();
+            ClienteIdtextBox.Clear();
+            NombrestextBox.Clear();
+            ApellidostextBox.Clear();
+            CedulamaskedTextBox2.Clear();
+            TelefonomaskedTextBox1.Clear();
         }
 
-        private void Limpiarbutton_Click(object sender, EventArgs e)
+        private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(MarcaIdtextBox.Text))
+            if (string.IsNullOrEmpty(ClienteIdtextBox.Text))
             {
 
-                MessageBox.Show("Debes llenar la MarcaId.");
+                MessageBox.Show("Debes llenar el ClienteId.");
 
             }
             else
             {
-                marca.MarcaId = int.Parse(MarcaIdtextBox.Text);
-                if (marca.Eliminar())
+
+
+                clientes.ClienteId = int.Parse(ClienteIdtextBox.Text);
+                if (clientes.Eliminar())
                 {
                     Limpiar();
                     MessageBox.Show("Eliminado Correcto", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -50,18 +56,30 @@ namespace ProyectoFinalParqueos
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (marca.Buscar(int.Parse(MarcaIdtextBox.Text)))
+
+            if (clientes.Buscar(int.Parse(ClienteIdtextBox.Text)))
             {
-                DescripciontextBox.Text = marca.Descripcion;
+
+                NombrestextBox.Text = clientes.Nombres;
+                ApellidostextBox.Text = clientes.Apellidos;
+                CedulamaskedTextBox2.Text = clientes.Cedula;
+                TelefonomaskedTextBox1.Text = clientes.Telefono;
+                FechaIngresodateTimePicker.Value = clientes.FechaIngreso;
             }
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(DescripciontextBox.Text))
+            if (string.IsNullOrEmpty(NombrestextBox.Text))
             {
 
-                MessageBox.Show("Debes llenar la descripcion.");
+                MessageBox.Show("Debes llenar el/los nombre/s.");
+
+            }
+            else if (string.IsNullOrEmpty(ApellidostextBox.Text))
+            {
+
+                MessageBox.Show("Debes llenar los apellidos.");
 
             }
             else
@@ -69,19 +87,23 @@ namespace ProyectoFinalParqueos
 
 
 
-                marca.Descripcion = DescripciontextBox.Text;
+                clientes.Nombres = NombrestextBox.Text;
+                clientes.Apellidos = ApellidostextBox.Text;
+                clientes.Cedula = CedulamaskedTextBox2.Text;
+                clientes.Telefono = TelefonomaskedTextBox1.Text;
+                clientes.FechaIngreso = Convert.ToDateTime(FechaIngresodateTimePicker.Value);
 
                 int id;
-                int.TryParse(MarcaIdtextBox.Text, out id);
+                int.TryParse(ClienteIdtextBox.Text, out id);
 
                 if (id == 0)
                 {
-                    if (marca.Insertar())
+
+                    if (clientes.Insertar())
                     {
                         Limpiar();
                         MessageBox.Show("Guardado Correcto", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
                     else
                     {
                         MessageBox.Show("A surgido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -89,12 +111,13 @@ namespace ProyectoFinalParqueos
                 }
                 else
                 {
-                    if (marca.Modificar(id))
+
+
+                    if (clientes.Modificar(id))
                     {
                         Limpiar();
                         MessageBox.Show("Modificado Correcto", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
                     else
                     {
                         MessageBox.Show("A surgido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -102,6 +125,7 @@ namespace ProyectoFinalParqueos
                 }
 
             }
+
         }
     }
 }

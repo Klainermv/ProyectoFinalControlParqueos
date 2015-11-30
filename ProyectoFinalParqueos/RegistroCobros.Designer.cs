@@ -38,7 +38,7 @@
             this.CobroIdtextBox = new System.Windows.Forms.TextBox();
             this.MontotextBox = new System.Windows.Forms.TextBox();
             this.TotaltextBox = new System.Windows.Forms.TextBox();
-            this.ContratoIdcomboBox = new System.Windows.Forms.ComboBox();
+            this.ClienteIdcomboBox = new System.Windows.Forms.ComboBox();
             this.FechadateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.CobroDetalleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContratoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DetallesdataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -83,9 +83,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 135);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "ContratoId:";
+            this.label4.Text = "ClienteId:";
             // 
             // label5
             // 
@@ -109,7 +109,7 @@
             this.DetallesdataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetallesdataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CobroDetalleId,
-            this.ContratoId,
+            this.ClienteId,
             this.Total});
             this.DetallesdataGridView1.Location = new System.Drawing.Point(9, 173);
             this.DetallesdataGridView1.Name = "DetallesdataGridView1";
@@ -137,13 +137,13 @@
             this.TotaltextBox.Size = new System.Drawing.Size(100, 20);
             this.TotaltextBox.TabIndex = 9;
             // 
-            // ContratoIdcomboBox
+            // ClienteIdcomboBox
             // 
-            this.ContratoIdcomboBox.FormattingEnabled = true;
-            this.ContratoIdcomboBox.Location = new System.Drawing.Point(85, 131);
-            this.ContratoIdcomboBox.Name = "ContratoIdcomboBox";
-            this.ContratoIdcomboBox.Size = new System.Drawing.Size(121, 21);
-            this.ContratoIdcomboBox.TabIndex = 10;
+            this.ClienteIdcomboBox.FormattingEnabled = true;
+            this.ClienteIdcomboBox.Location = new System.Drawing.Point(85, 131);
+            this.ClienteIdcomboBox.Name = "ClienteIdcomboBox";
+            this.ClienteIdcomboBox.Size = new System.Drawing.Size(121, 21);
+            this.ClienteIdcomboBox.TabIndex = 10;
             // 
             // FechadateTimePicker1
             // 
@@ -208,10 +208,10 @@
             this.CobroDetalleId.HeaderText = "CobroDetalleId";
             this.CobroDetalleId.Name = "CobroDetalleId";
             // 
-            // ContratoId
+            // ClienteId
             // 
-            this.ContratoId.HeaderText = "ContratoId";
-            this.ContratoId.Name = "ContratoId";
+            this.ClienteId.HeaderText = "ClienteId";
+            this.ClienteId.Name = "ClienteId";
             // 
             // Total
             // 
@@ -229,7 +229,7 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Limpiarbutton);
             this.Controls.Add(this.FechadateTimePicker1);
-            this.Controls.Add(this.ContratoIdcomboBox);
+            this.Controls.Add(this.ClienteIdcomboBox);
             this.Controls.Add(this.TotaltextBox);
             this.Controls.Add(this.MontotextBox);
             this.Controls.Add(this.CobroIdtextBox);
@@ -243,7 +243,6 @@
             this.Name = "RegistroCobros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Cobros";
-            
             ((System.ComponentModel.ISupportInitialize)(this.DetallesdataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,7 +261,7 @@
         private System.Windows.Forms.TextBox CobroIdtextBox;
         private System.Windows.Forms.TextBox MontotextBox;
         private System.Windows.Forms.TextBox TotaltextBox;
-        private System.Windows.Forms.ComboBox ContratoIdcomboBox;
+        private System.Windows.Forms.ComboBox ClienteIdcomboBox;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker1;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Guardarbutton;
@@ -270,7 +269,7 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Agregarbutton;
         private System.Windows.Forms.DataGridViewTextBoxColumn CobroDetalleId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ContratoId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

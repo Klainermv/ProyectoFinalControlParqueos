@@ -37,13 +37,13 @@
             this.ClienteIdtextBox = new System.Windows.Forms.TextBox();
             this.NombrestextBox = new System.Windows.Forms.TextBox();
             this.ApellidostextBox = new System.Windows.Forms.TextBox();
-            this.CedulatextBox = new System.Windows.Forms.TextBox();
-            this.TelefonotextBox = new System.Windows.Forms.TextBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.FechaIngresodateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.TelefonomaskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.CedulamaskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -121,20 +121,6 @@
             this.ApellidostextBox.Size = new System.Drawing.Size(174, 20);
             this.ApellidostextBox.TabIndex = 8;
             // 
-            // CedulatextBox
-            // 
-            this.CedulatextBox.Location = new System.Drawing.Point(137, 121);
-            this.CedulatextBox.Name = "CedulatextBox";
-            this.CedulatextBox.Size = new System.Drawing.Size(174, 20);
-            this.CedulatextBox.TabIndex = 9;
-            // 
-            // TelefonotextBox
-            // 
-            this.TelefonotextBox.Location = new System.Drawing.Point(137, 149);
-            this.TelefonotextBox.Name = "TelefonotextBox";
-            this.TelefonotextBox.Size = new System.Drawing.Size(174, 20);
-            this.TelefonotextBox.TabIndex = 10;
-            // 
             // Nuevobutton
             // 
             this.Nuevobutton.Location = new System.Drawing.Point(35, 249);
@@ -183,18 +169,34 @@
             this.FechaIngresodateTimePicker.Size = new System.Drawing.Size(150, 20);
             this.FechaIngresodateTimePicker.TabIndex = 16;
             // 
+            // TelefonomaskedTextBox1
+            // 
+            this.TelefonomaskedTextBox1.Location = new System.Drawing.Point(137, 156);
+            this.TelefonomaskedTextBox1.Mask = "000-000-0000";
+            this.TelefonomaskedTextBox1.Name = "TelefonomaskedTextBox1";
+            this.TelefonomaskedTextBox1.Size = new System.Drawing.Size(174, 20);
+            this.TelefonomaskedTextBox1.TabIndex = 17;
+            // 
+            // CedulamaskedTextBox2
+            // 
+            this.CedulamaskedTextBox2.Location = new System.Drawing.Point(137, 128);
+            this.CedulamaskedTextBox2.Mask = "000-0000000-0";
+            this.CedulamaskedTextBox2.Name = "CedulamaskedTextBox2";
+            this.CedulamaskedTextBox2.Size = new System.Drawing.Size(174, 20);
+            this.CedulamaskedTextBox2.TabIndex = 18;
+            // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 324);
+            this.Controls.Add(this.CedulamaskedTextBox2);
+            this.Controls.Add(this.TelefonomaskedTextBox1);
             this.Controls.Add(this.FechaIngresodateTimePicker);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.TelefonotextBox);
-            this.Controls.Add(this.CedulatextBox);
             this.Controls.Add(this.ApellidostextBox);
             this.Controls.Add(this.NombrestextBox);
             this.Controls.Add(this.ClienteIdtextBox);
@@ -223,12 +225,12 @@
         private System.Windows.Forms.TextBox ClienteIdtextBox;
         private System.Windows.Forms.TextBox NombrestextBox;
         private System.Windows.Forms.TextBox ApellidostextBox;
-        private System.Windows.Forms.TextBox CedulatextBox;
-        private System.Windows.Forms.TextBox TelefonotextBox;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.DateTimePicker FechaIngresodateTimePicker;
+        private System.Windows.Forms.MaskedTextBox TelefonomaskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox CedulamaskedTextBox2;
     }
 }

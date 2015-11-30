@@ -10,17 +10,17 @@ using BLL;
 
 namespace ProyectoFinalParqueos
 {
-    public partial class RegistroMarcas : Form
+    public partial class RegistroModelos : Form
     {
-        private Marcas marca = new Marcas();
-        public RegistroMarcas()
+        private Modelos modelo = new Modelos();
+        public RegistroModelos()
         {
             InitializeComponent();
         }
 
         private void Limpiar()
         {
-            MarcaIdtextBox.Clear();
+            ModeloIdtextBox.Clear();
             DescripciontextBox.Clear();
         }
 
@@ -31,16 +31,16 @@ namespace ProyectoFinalParqueos
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(MarcaIdtextBox.Text))
+            if (string.IsNullOrEmpty(ModeloIdtextBox.Text))
             {
 
-                MessageBox.Show("Debes llenar la MarcaId.");
+                MessageBox.Show("Debes llenar el ModeloId.");
 
             }
             else
             {
-                marca.MarcaId = int.Parse(MarcaIdtextBox.Text);
-                if (marca.Eliminar())
+                modelo.ModeloId = int.Parse(ModeloIdtextBox.Text);
+                if (modelo.Eliminar())
                 {
                     Limpiar();
                     MessageBox.Show("Eliminado Correcto", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -50,9 +50,9 @@ namespace ProyectoFinalParqueos
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (marca.Buscar(int.Parse(MarcaIdtextBox.Text)))
+            if (modelo.Buscar(int.Parse(ModeloIdtextBox.Text)))
             {
-                DescripciontextBox.Text = marca.Descripcion;
+                DescripciontextBox.Text = modelo.Descripcion;
             }
         }
 
@@ -66,17 +66,14 @@ namespace ProyectoFinalParqueos
             }
             else
             {
-
-
-
-                marca.Descripcion = DescripciontextBox.Text;
+                modelo.Descripcion = DescripciontextBox.Text;
 
                 int id;
-                int.TryParse(MarcaIdtextBox.Text, out id);
+                int.TryParse(ModeloIdtextBox.Text, out id);
 
                 if (id == 0)
                 {
-                    if (marca.Insertar())
+                    if (modelo.Insertar())
                     {
                         Limpiar();
                         MessageBox.Show("Guardado Correcto", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -89,7 +86,7 @@ namespace ProyectoFinalParqueos
                 }
                 else
                 {
-                    if (marca.Modificar(id))
+                    if (modelo.Modificar(id))
                     {
                         Limpiar();
                         MessageBox.Show("Modificado Correcto", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -100,7 +97,6 @@ namespace ProyectoFinalParqueos
                         MessageBox.Show("A surgido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
             }
         }
     }

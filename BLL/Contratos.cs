@@ -10,7 +10,7 @@ namespace BLL
     {
         public int ContratoId { set; get; }
         public DateTime FechaVencimiento { set; get; }
-        public double Tarifa { set; get; }
+        public static double TARIFA =700;
         public int ParqueId { set; get; }
         public int ClienteId { set; get; }
         public int VehiculoId { set; get; }
@@ -22,7 +22,6 @@ namespace BLL
         public Contratos()
         {
             ContratoId = 0;
-            Tarifa = 0;
             ParqueId = 0;
             ClienteId = 0;
             VehiculoId = 0;
@@ -32,12 +31,12 @@ namespace BLL
 
         public override bool Insertar()
         {
-            return conexion.Ejecutar("insert into Contratos(FechaVencimiento,Tarifa,ParqueoId,ClienteId,VehiculoId,Total,Balance,Activo)values('" + FechaVencimiento.ToString("MM/dd/yyyy")+"','"+Tarifa+"','"+ParqueId+"', '"+ClienteId+"', '"+VehiculoId+"','"+Total+"','"+Balance+"','"+Activo + "')");
+            return conexion.Ejecutar("insert into Contratos(FechaVencimiento,Tarifa,ParqueoId,ClienteId,VehiculoId,Total,Balance,Activo)values('" + FechaVencimiento.ToString("MM/dd/yyyy") + "','" + TARIFA + "','" + ParqueId + "', '" + ClienteId + "', '" + VehiculoId + "','" + Total + "','" + Balance + "','" + Activo + "')");
         }
 
-        public override bool Modificar(int ModeloId)
+        public override bool Modificar(int ContratoId)
         {
-            return conexion.Ejecutar("update Contratos set FechaVencimiento='" + FechaVencimiento + "', Tarifa='" + Tarifa + "', ParqueoId='"+ParqueId + "',ClienteId='" + ClienteId + "', VehiculoId='" + VehiculoId + "', Total='" + Total + "', Balance='" + Balance + "', Activo='" + Activo + "' where ContratoId=" + ContratoId);
+            return conexion.Ejecutar("update Contratos set FechaVencimiento='" + FechaVencimiento.ToString("MM/dd/yyyy") + "', Tarifa='" + TARIFA + "', ParqueoId='" + ParqueId + "',ClienteId='" + ClienteId + "', VehiculoId='" + VehiculoId + "', Total='" + Total + "', Balance='" + Balance + "', Activo='" + Activo + "' where ContratoId='" + ContratoId+"'");
         }
 
         public override bool Eliminar()
@@ -54,11 +53,9 @@ namespace BLL
             {
                 ContratoId = (int)dt.Rows[0]["ContratoId"];
                 FechaVencimiento =(DateTime) dt.Rows[0]["FechaVencimiento"];
-                Tarifa = (double)dt.Rows[0]["Tarifa"];
                 ParqueId = (int)dt.Rows[0]["ParqueoId"];
                 ClienteId = (int)dt.Rows[0]["ClienteId"];
                 VehiculoId = (int)dt.Rows[0]["VehiculoId"];
-                Balance = (double)dt.Rows[0]["Balance"];
                 Total = (double)dt.Rows[0]["Total"];
                 Activo = (bool)dt.Rows[0]["Activo"];
 

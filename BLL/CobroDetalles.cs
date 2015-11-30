@@ -8,19 +8,19 @@ namespace BLL
     public class CobroDetalles
     {
         public int CobroDetalleId { set; get; }
-        public int ContratoId { set; get; }
+        public int ClienteId { set; get; }
         public float Total { set; get; }
 
         public CobroDetalles()
         {
             CobroDetalleId=0;
-            ContratoId = 0;
+            ClienteId = 0;
             Total = 0;
         }
 
-        public CobroDetalles(int ContratoId, float Total)
+        public CobroDetalles(int ClienteId, float Total)
         {
-            this.ContratoId = ContratoId;
+            this.ClienteId = ClienteId;
             this.Total = Total;
             this.CobroDetalleId = CobroDetalleId;
         }
